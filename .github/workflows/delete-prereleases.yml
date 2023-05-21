@@ -1,0 +1,26 @@
+name: Delete pre-releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 01 * * 3'
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    name: Purge pre-releases
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Delete Releases
+        uses: sgpublic/delete-release-action@v1.0
+        with:
+          release-drop: false
+          pre-release-drop: true
+          pre-release-drop-tag: true
+          pre-release-keep-count: 3
+          draft-drop: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

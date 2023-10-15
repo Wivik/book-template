@@ -1,4 +1,4 @@
-# Contributors {epub:type=contributors}
+# Contributions {epub:type=contributors}
 
 | Nom | Site web | Role |
 | ------ | --------- | ----- |

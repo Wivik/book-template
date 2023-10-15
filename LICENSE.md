@@ -1,15 +1,37 @@
 # LICENSE
 
-Unless other statements, this work is licensed under CreativeCommons Attribution ShareAlike 4.0
+## Work license
 
-![CC-BY-SA](book/img/cc-by-sa.png)
+*Add here your work license*
 
-https://creativecommons.org/licenses/by-sa/4.0/
+## Code license
 
-You are free to:
-Share — copy and redistribute the material in any medium or format
-Adapt — remix, transform, and build upon the material
-for any purpose, even commercially.
+The book template repository (https://github.com/Wivik/book-template) is licensed under MIT.
 
-The licensor cannot revoke these freedoms as long as you follow the license terms.
+This license covers the directory layout proposition and the following files :
 
+```
+.
+├── generate.sh
+```
+
+The MIT License (MIT)
+
+Copyright (c) 2023 Seb
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

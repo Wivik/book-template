@@ -1,1 +1,1 @@
-# Preface {epub:type=preface}
+# Préface {epub:type=preface}

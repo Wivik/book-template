@@ -1,6 +1,6 @@
 # Contributors {epub:type=contributors}
 
-| Name | Website | Role |
+| Nom | Site web | Role |
 | ------ | --------- | ----- |
-| Seb | https://zedas.fr | Main author |
+| Seb | URL site web | Auteur principal |
 

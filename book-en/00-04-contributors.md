@@ -2,5 +2,5 @@
 
 | Name | Website | Role |
 | ------ | --------- | ----- |
-| Seb | https://zedas.fr | Main author |
+| Name | website url | Main author |
 

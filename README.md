@@ -4,6 +4,8 @@ This book template repository is a default layout proposition for basic `epub` d
 
 You may find [in this page](https://zedas.fr/activities/books/) a list of books I've made using this template.
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Wivik_book-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Wivik_book-template)
+
 ## How to use
 
 The books are generated using the following default layout. By design, you can use several languages for your book.

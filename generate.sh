@@ -63,7 +63,7 @@ podman run \
     -o ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE} \
     --filter=/filters/plantuml.py \
     --resource-path=.:book-${BOOK_LANG} \
-    --standalone $(ls book-${BOOK_LANG}/00-*.md book-${BOOK_LANG}/01-*.md)
+    --standalone $(ls book-${BOOK_LANG}/*.md)
 
 if [ `ls ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}` ]; then
     echo "👏 File successfully created"

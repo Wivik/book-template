@@ -29,6 +29,7 @@
 DEFAULT_BASENAME=$(pwd | awk -F '/' '{print $NF}')
 DEFAULT_LANG="fr"
 DEFAULT_OUTPUT_DIR="output"
+DEFAULT_PREVIEW="yes"
 
 if [ ! -d ${DEFAULT_OUTPUT_DIR} ]; then
     echo "📁 Creating output directory"
@@ -50,10 +51,23 @@ echo "🌍 Available languages are : "
 ls -d book*
 read -p "Which language to use : [ ${DEFAULT_LANG} ] : " BOOK_LANG
 BOOK_LANG=${BOOK_LANG:-$DEFAULT_LANG}
+read -p "Create 1st chapter preview ? (yes/no) [ ${DEFAULT_PREVIEW} ] " PREVIEW
+echo "⚙ Launch pandoc generator..."
+PREVIEW=${PREVIEW:-"${DEFAULT_PREVIEW}"}
 read -p "🔎 Review filename (⚠ existing files will be replaced ⚠) [ ${FILE_BASENAME}-${BOOK_LANG}.epub ] : " EPUB_FILE
 EPUB_FILE=${EPUB_FILE:-"${FILE_BASENAME}-${BOOK_LANG}.epub"}
+if [ "${PREVIEW}" = "yes" ]; then
+    PREVIEW_EPUB_FILE="${FILE_BASENAME}-${BOOK_LANG}_preview.epub"
+fi
 
-echo "⚙ Launch pandoc generator..."
+if [ -f ${DEFAULT_OUTPUT_DIR}/$EPUB_FILE ]; then
+    rm -v ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}
+fi
+
+if [ -f ${DEFAULT_OUTPUT_DIR}/$PREVIEW_EPUB_FILE ]; then
+    rm -v ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE}
+fi
+
 
 podman run \
     --rm \
@@ -63,7 +77,7 @@ podman run \
     -o ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE} \
     --filter=/filters/plantuml.py \
     --resource-path=.:book-${BOOK_LANG} \
-    --standalone $(ls book-${BOOK_LANG}/*.md)
+    --standalone $(ls book-${BOOK_LANG}/[0-9]*.md)
 
 if [ `ls ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}` ]; then
     echo "👏 File successfully created"
@@ -72,3 +86,24 @@ else
     echo "😨 Couldn't find produced file, check output for error"
 fi
 
+
+if [ "${PREVIEW}" = "yes" ]; then
+    echo "Creating 1st chapter the preview version"
+
+    podman run \
+        --rm \
+        -v .:/workspace \
+        --workdir /workspace \
+        ghcr.io/wivik/pandoc-plantuml:latest \
+        -o ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE} \
+        --filter=/filters/plantuml.py \
+        --resource-path=.:book-${BOOK_LANG} \
+        --standalone $(ls book-${BOOK_LANG}/00-*.md book-${BOOK_LANG}/00-01-preview.txt book-${BOOK_LANG}/01-01-*.md book-${BOOK_LANG}/02-*.md)
+
+    if [ `ls ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE}` ]; then
+        echo "👏 File successfully created"
+        ls ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE}
+    else
+        echo "😨 Couldn't find produced file, check output for error"
+    fi
+fi

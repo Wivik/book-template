@@ -6,7 +6,7 @@ Ce livre est publié par son auteur sous licence **Creative Commons Attribution 
 
 https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr
 
-## Vous êtes autorisé à :
+**Vous êtes autorisé à :**
 
 **Partager** — copier, distribuer et communiquer le matériel par tous moyens et sous tous formats
 
@@ -14,7 +14,7 @@ https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr
 
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que vous appliquez les termes de cette licence.
 
-## Selon les conditions suivantes :
+**Selon les conditions suivantes :**
 
 **Attribution** — Vous devez créditer l'Œuvre, intégrer un lien vers la licence et indiquer si des modifications ont été effectuées à l’œuvre. Vous devez indiquer ces informations par tous les moyens raisonnables, sans toutefois suggérer que l'Offrant vous soutient ou soutient la façon dont vous avez utilisé son Oeuvre.
 
@@ -22,7 +22,7 @@ L'Offrant ne peut retirer les autorisations concédées par la licence tant que 
 
 **Pas de restrictions complémentaires** — Vous n'êtes pas autorisé à appliquer des conditions légales ou des mesures techniques qui restreindraient légalement autrui à utiliser l’œuvre dans les conditions décrites par la licence.
 
-## Notes:
+**Notes:**
 
 Vous n'êtes pas dans l'obligation de respecter la licence pour les éléments ou matériel appartenant au domaine public ou dans le cas où l'utilisation que vous souhaitez faire est couverte par une exception.
 

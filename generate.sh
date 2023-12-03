@@ -69,13 +69,8 @@ if [ -f ${DEFAULT_OUTPUT_DIR}/$PREVIEW_EPUB_FILE ]; then
 fi
 
 
-podman run \
-    --rm \
-    -v .:/workspace \
-    --workdir /workspace \
-    ghcr.io/wivik/pandoc-plantuml:latest \
+pandoc \
     -o ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE} \
-    --filter=/filters/plantuml.py \
     --resource-path=.:book-${BOOK_LANG} \
     --standalone $(ls book-${BOOK_LANG}/[0-9]*.md)
 
@@ -90,13 +85,8 @@ fi
 if [ "${PREVIEW}" = "yes" ]; then
     echo "Creating 1st chapter the preview version"
 
-    podman run \
-        --rm \
-        -v .:/workspace \
-        --workdir /workspace \
-        ghcr.io/wivik/pandoc-plantuml:latest \
+    pandoc \
         -o ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE} \
-        --filter=/filters/plantuml.py \
         --resource-path=.:book-${BOOK_LANG} \
         --standalone $(ls book-${BOOK_LANG}/00-*.md book-${BOOK_LANG}/00-01-preview.txt book-${BOOK_LANG}/01-01-*.md book-${BOOK_LANG}/02-*.md)
 

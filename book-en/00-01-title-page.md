@@ -6,4 +6,5 @@ language: en-US
 cover-image: ./book-en/img/cover.png
 description: 
 date:
+identifier: isbn13
 ---

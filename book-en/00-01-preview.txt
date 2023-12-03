@@ -4,6 +4,6 @@ This preview offers you the first chapter of this book free of charge.
 
 Please find here the other books written by the same author :
 
-https://zedas.fr/activities/books/
+https://books.zedas.fr/
 
 ![Books from the same author](./img/books.png)

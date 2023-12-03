@@ -4,6 +4,6 @@ Cet aperçu vous propose le premier chapitre de ce livre gratuitement.
 
 Retrouvez la version intégrale ainsi que la liste des autres ouvrages de l'auteur à l'adresse suivante :
 
-https://zedas.fr/activities/books/
+https://books.zedas.fr/
 
 ![Livres du même auteur](./img/books.png)

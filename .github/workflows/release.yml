@@ -27,7 +27,7 @@ jobs:
           args: "-o ${{ env.BOOK_NAME }}.epub --resource-path=.:book ${{ steps.book-files.outputs.BOOK_FILES }} --standalone"
 
       - name: Produce release note
-        uses: TriPSs/conventional-changelog-action@v4
+        uses: TriPSs/conventional-changelog-action@v5
         id: changelog
         with:
           github-token: ${{ secrets.github_token }}

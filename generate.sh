@@ -97,3 +97,26 @@ if [ "${PREVIEW}" = "yes" ]; then
         echo "😨 Couldn't find produced file, check output for error"
     fi
 fi
+
+## apply quality checks
+
+echo "🔎 Execute quality check"
+
+if [ ! -d "venv" ]; then
+    virtualenv venv
+fi
+
+echo "Mount virtuelenv"
+source venv/bin/activate
+export | grep VIRTUAL_ENV
+
+pip install -r requirements.txt
+
+python epub-quality-check.py ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}
+if [ ! "$?" = "0" ]; then
+    echo ""
+    echo "😨 Quality check failed"
+else
+    echo ""
+    echo "👏 Quality check passed !"
+fi

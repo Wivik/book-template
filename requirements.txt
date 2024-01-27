@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+EbookLib==0.18
+langdetect==1.0.9
+langcodes==3.3.0
+language_data==1.1

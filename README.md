@@ -74,6 +74,27 @@ Please note that the cover in the book metadata requires the full relative path 
 
 Otherwises, the images inside the book content only require to be linked using `img/the-image.png`.
 
+## Generate your ebook
+
+Once you're up to produce your ebook, you can use the `generate.sh` script.
+
+This script will ask for some questions :
+
+- Name of the file to create
+- Book language to produce (fr or en according to the folder `book-xx`)
+- Create the 1st chapter preview
+
+Then, the `pandoc` command will be executed to produce the epub file.
+
+Following that, the Python script `epub-quality-check` will be executed to verify if your ebook passed some quality gates, based on the metadata and the content, such as :
+
+- The Title is not empty
+- The Author is not empty
+- The Description is not empty
+- The ISBN13 is not empty and valid (the check digit will be calculated)
+- The Book license is not empty
+- The book date is not empty and a valid YYYY-MM-DD value
+- The book is written in the declared language
 
 ## Contribute to the project
 

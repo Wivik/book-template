@@ -46,6 +46,7 @@ language: en-US
 cover-image: use the relative path from the repository root ex ./book-en/img/cover.jpg
 description: You book description.
 date: The publication date
+identifier: The ISBN13
 ---
 
 ```

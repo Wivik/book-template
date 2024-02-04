@@ -71,6 +71,7 @@ fi
 
 pandoc \
     -o ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE} \
+    --css epub.css \
     --resource-path=.:book-${BOOK_LANG} \
     --standalone $(ls book-${BOOK_LANG}/[0-9]*.md)
 
@@ -112,6 +113,7 @@ export | grep VIRTUAL_ENV
 
 pip install -r requirements.txt
 
+
 python epub-quality-check.py ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}
 if [ ! "$?" = "0" ]; then
     echo ""
@@ -120,3 +122,11 @@ else
     echo ""
     echo "👏 Quality check passed !"
 fi
+
+echo ""
+echo "----------------------------------------------------------"
+echo ""
+
+echo "📕 Display book's metadata"
+
+python epub-metadata-extractor.py ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}

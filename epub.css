@@ -1,0 +1,9 @@
+div.illustr-img {
+    max-width: 100%;
+    text-align: center;
+}
+
+div.illustr-img img {
+    max-width: 100%;
+    height: auto;
+}

@@ -30,6 +30,7 @@ DEFAULT_BASENAME=$(pwd | awk -F '/' '{print $NF}')
 DEFAULT_LANG="fr"
 DEFAULT_OUTPUT_DIR="output"
 DEFAULT_PREVIEW="yes"
+DEFAULT_RESET_VENV="no"
 
 if [ ! -d ${DEFAULT_OUTPUT_DIR} ]; then
     echo "📁 Creating output directory"
@@ -59,6 +60,8 @@ EPUB_FILE=${EPUB_FILE:-"${FILE_BASENAME}-${BOOK_LANG}.epub"}
 if [ "${PREVIEW}" = "yes" ]; then
     PREVIEW_EPUB_FILE="${FILE_BASENAME}-${BOOK_LANG}_preview.epub"
 fi
+read -p "🚮 reset Python virtualenv ? [ ${DEFAULT_RESET_VENV} ] : " RESET_VENV
+RESET_VENV=${RESET_VENV:-"${DEFAULT_RESET_VENV}"}
 
 if [ -f ${DEFAULT_OUTPUT_DIR}/$EPUB_FILE ]; then
     rm -v ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}
@@ -71,7 +74,6 @@ fi
 
 pandoc \
     -o ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE} \
-    --css epub.css \
     --resource-path=.:book-${BOOK_LANG} \
     --standalone $(ls book-${BOOK_LANG}/[0-9]*.md)
 
@@ -88,6 +90,7 @@ if [ "${PREVIEW}" = "yes" ]; then
 
     pandoc \
         -o ${DEFAULT_OUTPUT_DIR}/${PREVIEW_EPUB_FILE} \
+        --css epub.css \
         --resource-path=.:book-${BOOK_LANG} \
         --standalone $(ls book-${BOOK_LANG}/00-*.md book-${BOOK_LANG}/00-01-preview.txt book-${BOOK_LANG}/01-01-*.md book-${BOOK_LANG}/02-*.md)
 
@@ -103,6 +106,10 @@ fi
 
 echo "🔎 Execute quality check"
 
+if [ "${RESET_VENV}" = "yes" ]; then
+    virtualenv venv --clear
+fi
+
 if [ ! -d "venv" ]; then
     virtualenv venv
 fi
@@ -113,7 +120,6 @@ export | grep VIRTUAL_ENV
 
 pip install -r requirements.txt
 
-
 python epub-quality-check.py ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}
 if [ ! "$?" = "0" ]; then
     echo ""
@@ -123,10 +129,7 @@ else
     echo "👏 Quality check passed !"
 fi
 
+## Show file metadata
 echo ""
-echo "----------------------------------------------------------"
 echo ""
-
-echo "📕 Display book's metadata"
-
 python epub-metadata-extractor.py ${DEFAULT_OUTPUT_DIR}/${EPUB_FILE}

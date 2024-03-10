@@ -3,3 +3,5 @@ EbookLib==0.18
 langdetect==1.0.9
 langcodes==3.3.0
 language_data==1.1
+nltk==3.8.1
+PyYAML==6.0.1

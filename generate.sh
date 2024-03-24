@@ -30,7 +30,7 @@ DEFAULT_BASENAME=$(pwd | awk -F '/' '{print $NF}')
 DEFAULT_LANG="fr"
 DEFAULT_OUTPUT_DIR="output"
 DEFAULT_PREVIEW="yes"
-DEFAULT_RESET_VENV="no"
+DEFAULT_RESET_VENV="yes"
 
 if [ ! -d ${DEFAULT_OUTPUT_DIR} ]; then
     echo "📁 Creating output directory"

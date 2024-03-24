@@ -8,8 +8,6 @@ This work is published by its author under the **Creative Commons Attribution - 
 
 **CC BY-SA 4.0**
 
-https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
-
 **You are free to:**
 
 **Share** — copy and redistribute the material in any medium or format for any purpose, even commercially.
@@ -31,3 +29,10 @@ No additional restrictions - You may not apply legal terms or technological meas
 You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation .
 
 No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+**Legal code** : https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+
+
+**About translation**
+
+This book translation has been made by its author using the help of DeepL and a manual review.

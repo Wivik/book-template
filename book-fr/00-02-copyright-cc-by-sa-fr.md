@@ -4,11 +4,17 @@
 
 ISBN : 
 
+© 20xx - AuthorName
+
+Contact : authoremail
+
+Site web : authorwebsite
+
 Ce livre est publié par son auteur sous licence **Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International**.
 
-**CC BY-SA 4.0**
+Pour consulter une copie de la licence, consultez la page suivante : https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr
 
-https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr
+**Résumé CC BY-SA 4.0**
 
 **Vous êtes autorisé à :**
 

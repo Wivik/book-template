@@ -4,7 +4,15 @@
 
 ISBN : 
 
+© 20xx - AuthorName
+
+Contact : authoremail
+
+Site web : authorwebsite
+
 This work is published by its author under the **Creative Commons Attribution - ShareAlike 4.0 International** license.
+
+To view a copy of this license, please visit : https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
 
 **CC BY-SA 4.0**
 
@@ -29,9 +37,6 @@ No additional restrictions - You may not apply legal terms or technological meas
 You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation .
 
 No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
-
-**Legal code** : https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
-
 
 **About translation**
 
